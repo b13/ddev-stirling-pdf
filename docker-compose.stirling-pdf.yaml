@@ -1,0 +1,28 @@
+#ddev-generated
+services:
+  stirling-pdf:
+    container_name: ddev-${DDEV_SITENAME}-stirling-pdf
+    hostname: ${DDEV_SITENAME}-stirling-pdf
+    image: frooodle/s-pdf:latest
+    labels:
+      com.ddev.site-name: ${DDEV_SITENAME}
+      com.ddev.approot: $DDEV_APPROOT
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:8080/api/v1/info/status | grep -q 'UP' && curl -fL http://localhost:8080/ | grep -q 'Please sign in'" ]
+      interval: 5s
+      timeout: 10s
+      retries: 20
+    environment:
+      - VIRTUAL_HOST=$DDEV_HOSTNAME
+      - HTTP_EXPOSE=8060:8080
+      - HTTPS_EXPOSE=8064:8080
+      # For setup steps see https://github.com/Stirling-Tools/Stirling-PDF?tab=readme-ov-file#customisation
+      - DOCKER_ENABLE_SECURITY=true
+      - INSTALL_BOOK_AND_ADVANCED_HTML_OPS=true
+      - SECURITY_INITIALLOGIN_USERNAME=stirling
+      - SECURITY_INITIALLOGIN_PASSWORD=stirling
+    volumes:
+      - ".:/mnt/ddev_config"
+      - "./stirling-pdf/trainingData:/usr/share/tessdata"
+      - "./stirling-pdf/extraConfigs:/configs"
+      - "./stirling-pdf/customFiles:/customFiles"

@@ -1,0 +1,24 @@
+#ddev-generated
+security:
+  enableLogin: true # Enable or disable login
+  csrfDisabled: true
+
+system:
+  defaultLocale: 'en-US' # Set the default language (e.g. 'de-DE', 'fr-FR', etc)
+  googlevisibility: false # 'true' to allow Google visibility (via robots.txt), 'false' to disallow
+  customStaticFilePath: '/customFiles/' # Directory path for custom static files
+
+ui:
+  appName: DDEV-StirlingPdf # Application's visible name
+  homeDescription: DDEV Local Stirling PDF instance # Short description or tagline shown on homepage.
+  appNameNavbar: DDEV # Name displayed on the navigation bar
+
+endpoints:
+  toRemove: [] # List endpoints to disable (e.g. ['img-to-pdf', 'remove-pages'])
+  groupsToRemove: [] # List groups to disable (e.g. ['LibreOffice'])
+
+metrics:
+  enabled: true # 'true' to enable Info APIs endpoints (view http://localhost:8080/swagger-ui/index.html#/API to learn more), 'false' to disable
+
+
+# wget https://repo1.maven.org/maven2/com/h2database/h2/2.2.224/h2-2.2.224.jar -o h2.jar
