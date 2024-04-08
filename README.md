@@ -1,6 +1,6 @@
 # Stirling PDF
 
-Stirling PDF is an open-source tool to create, modify and convert PDF files. 
+Stirling PDF is an open-source tool to create, modify and convert PDF files.
 
 List of all features: https://github.com/Stirling-Tools/Stirling-PDF?tab=readme-ov-file#pdf-features
 
@@ -25,8 +25,8 @@ Don't forget to include these language packs in git.
 
 ## API Key
 
-After start, see `.ddev/stirling-pdf/extraConfigs/settings.yml` -> AutomaticallyGenerated -> key 
-to get the API Key 
+Go to `https://<project-name>.ddev.site:8064/account` and copy the API key.
+This will be stored in the database.
 
 ## Login
 
