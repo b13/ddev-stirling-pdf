@@ -8,6 +8,14 @@ Stirling PDF website: https://github.com/Stirling-Tools/Stirling-PDF/
 
 ## Install
 
+For DDEV v1.23.5 or above run
+
+```bash
+ddev add-on get b13/ddev-stirling-pdf && ddev restart
+```
+
+For earlier versions of DDEV run
+
 ```bash
 ddev get b13/ddev-stirling-pdf && ddev restart
 ```
