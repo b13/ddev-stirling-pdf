@@ -2,7 +2,8 @@
 
 setup_suite() {
   export DIR="$( cd "$( dirname "$BATS_TEST_FILENAME" )" >/dev/null 2>&1 && pwd )"
-  set -eu -o pipefail
+  # set -eu -o pipefail
+  set -x
   export TESTDIR=~/tmp/test-stirling-pdf-addon
   mkdir -p $TESTDIR
   export PROJNAME=test-addon-stirling-pdf
@@ -16,7 +17,7 @@ setup_suite() {
   echo "# ddev get ${DIR} with project ${PROJNAME} in ${TESTDIR} ($(pwd))" >&3
   ddev get "${DIR}/.."
   cp -rf "$DIR" "$TESTDIR/"
-  cp -rf "$DIR/testdata/stirling-pdf-DB.mv.db" "$TESTDIR/.ddev/stirling-pdf/extraConfigs/"
+  cp -rf "$DIR/testdata/stirling-pdf-DB-2.3.232.mv.db" "$TESTDIR/.ddev/stirling-pdf/extraConfigs/"
   ddev restart -y >/dev/null
 }
 

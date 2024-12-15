@@ -8,7 +8,8 @@
 }
 
 @test "Send request to an endpoint that requires authentication" {
-    apiKey="16131b6c-c7b0-468f-b35c-9bfd5a613d9d"
+    apiKey="f8ee261a-3998-42f5-952c-4ef1ee5d1341"
+    # apiKey="16131b6c-c7b0-468f-b35c-9bfd5a613d9d"
     run ddev exec "curl -X 'POST' 'http://stirling-pdf:8080/api/v1/security/get-info-on-pdf' -s -H 'X-API-KEY: ${apiKey}' -H 'accept: */*' -H 'Content-Type: multipart/form-data' -F 'fileInput=@tests/testdata/Test.pdf;type=application/pdf'"
 
     [ "$status" -eq 0 ]
