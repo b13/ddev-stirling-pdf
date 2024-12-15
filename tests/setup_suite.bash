@@ -2,8 +2,7 @@
 
 setup_suite() {
   export DIR="$( cd "$( dirname "$BATS_TEST_FILENAME" )" >/dev/null 2>&1 && pwd )"
-  # set -eu -o pipefail
-  set -x
+  set -eu -o pipefail
   export TESTDIR=~/tmp/test-stirling-pdf-addon
   mkdir -p $TESTDIR
   export PROJNAME=test-addon-stirling-pdf

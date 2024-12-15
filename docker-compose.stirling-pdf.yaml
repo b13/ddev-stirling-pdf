@@ -3,7 +3,7 @@ services:
   stirling-pdf:
     container_name: ddev-${DDEV_SITENAME}-stirling-pdf
     hostname: ${DDEV_SITENAME}-stirling-pdf
-    image: frooodle/s-pdf:latest
+    image: stirlingtools/stirling-pdf:0.36.2
     labels:
       com.ddev.site-name: ${DDEV_SITENAME}
       com.ddev.approot: $DDEV_APPROOT
